@@ -17,6 +17,7 @@ public:
 	{
 		settingsManager = mgr;
 
+		// set buttons and positions
 		//Red button
 		Vector2f redPos(100, 70);
 		redBtn.setPosition(redPos);
@@ -83,6 +84,7 @@ public:
 
 	void draw(RenderWindow& win)
 	{
+		// titles
 		Font font;
 		font.loadFromFile("C:\\Windows\\Fonts\\Calibri.ttf");
 
@@ -92,6 +94,7 @@ public:
 		Text selectedShape("Select Pen Shape", font, 25);
 		selectedShape.setPosition(30, 300);
 
+		//switch button fills on selection
 		//Red Button
 		if (settingsManager->getCurColor() == Color::Red)
 		{
@@ -99,7 +102,7 @@ public:
 			greenBtn.setFillColor(Color::Transparent);
 			blueBtn.setFillColor(Color::Transparent);
 		}
-
+		
 		//Green Button
 		if (settingsManager->getCurColor() == Color::Green)
 		{

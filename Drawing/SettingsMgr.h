@@ -18,7 +18,7 @@ public:
 		currentColor = startingColor;
 		currentShape = startingShape;
 	}
-	// getters and setters to use them
+	// getters and setters to use them colors
 	void setCurColor(Color setColor)
 	{
 		currentColor = setColor;
