@@ -1,14 +1,16 @@
 //================================================
-// YOUR NAME GOES HERE <-----------------  
+// Aaron hill
+// 3/21/18
+// program -- drawing
 //================================================
 #include <iostream>
 #include <fstream>
-using namespace std;
 #include <SFML\Graphics.hpp>
 #include "SettingsMgr.h"
 #include "ShapeMgr.h"
 #include "SettingsUI.h"
 #include "DrawingUI.h"
+using namespace std;
 using namespace sf;
 
 // Finish this code. Other than where it has comments telling you to 
@@ -24,13 +26,13 @@ int main()
 	window.setFramerateLimit(60);
 
 	SettingsMgr settingsMgr(Color::Blue, ShapeEnum::CIRCLE);
-	SettingsUI  settingsUI(&settingsMgr); 
+	SettingsUI  settingsUI(&settingsMgr);
 	ShapeMgr    shapeMgr;
 	DrawingUI   drawingUI(Vector2f(200, 50));
-	
+
 	// ********* Add code here to make the managers read from shapes file (if the file exists)
 
-	while (window.isOpen()) 
+	while (window.isOpen())
 	{
 		Event event;
 		while (window.pollEvent(event))
@@ -49,10 +51,10 @@ int main()
 			}
 			else if (event.type == Event::MouseMoved && Mouse::isButtonPressed(Mouse::Button::Left))
 			{
-				
+
 				Vector2f mousePos = window.mapPixelToCoords(Mouse::getPosition(window));
 				// check to see if mouse is in the drawing area
-				if (drawingUI.isMouseInCanvas(mousePos))
+				if (drawingUI.isMouseOnWindow(mousePos))
 				{
 					// add a shape to the list based on current settings
 					shapeMgr.addShape(mousePos, settingsMgr.getCurShape(), settingsMgr.getCurColor());
