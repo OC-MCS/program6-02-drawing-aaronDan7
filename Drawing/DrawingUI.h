@@ -44,7 +44,7 @@ public:
 		}
 	}
 
-	// no draw when mouse is off
+	// no drawing while mouse is off screen
 	bool isMouseOnWindow(Vector2f mousePos)
 	{
 		bool onWindow = false;

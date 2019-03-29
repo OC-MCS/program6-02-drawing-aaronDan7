@@ -21,19 +21,19 @@ public:
 
 	void addShape(Vector2f pos, ShapeEnum shapeChoice, Color color)
 	{
-		if (shapeChoice == CIRCLE)
-		{
-			Circle* newCircle;
-
-			newCircle = new Circle(pos, color, shapeChoice);
-			vec.push_back(newCircle);
-		}
 		if (shapeChoice == SQUARE)
 		{
-			Square* newSquare;
+			Square* square;
 
-			newSquare = new Square(pos, color, shapeChoice);
-			vec.push_back(newSquare);
+			square = new Square(pos, color, shapeChoice);
+			vec.push_back(square);
 		}
+		if (shapeChoice == CIRCLE)
+		{
+			Circle* circle;
+
+			circle = new Circle(pos, color, shapeChoice);
+			vec.push_back(circle);
+		}		
 	}
 };
