@@ -86,10 +86,10 @@ public:
 		Font font;
 		font.loadFromFile("C:\\Windows\\Fonts\\Calibri.ttf");
 
-		Text selectedColor("Selected Color", font, 25);
+		Text selectedColor("Select Pen Color", font, 25);
 		selectedColor.setPosition(30, 25);
 
-		Text selectedShape("Selected Shape", font, 25);
+		Text selectedShape("Select Pen Shape", font, 25);
 		selectedShape.setPosition(30, 300);
 
 		//Red Button

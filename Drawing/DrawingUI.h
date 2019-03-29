@@ -8,8 +8,9 @@
 class DrawingUI
 {
 private:
-	RectangleShape outerBox;
-	RectangleShape leftSide;
+	// draw space and window frame
+	RectangleShape wholeBox;
+	RectangleShape leftBox;
 public:
 
 	DrawingUI(Vector2f p)
@@ -20,21 +21,21 @@ public:
 	{
 		// Draw outer border
 		Vector2f sqPos(10, 10);
-		outerBox.setPosition(sqPos);
-		outerBox.setOutlineColor(Color::White);
-		outerBox.setOutlineThickness(3);
-		outerBox.setSize(Vector2f(780, 580));
-		outerBox.setFillColor(Color::Transparent);
-		win.draw(outerBox);
+		wholeBox.setPosition(sqPos);
+		wholeBox.setOutlineColor(Color::White);
+		wholeBox.setOutlineThickness(3);
+		wholeBox.setSize(Vector2f(780, 580));
+		wholeBox.setFillColor(Color::Transparent);
+		win.draw(wholeBox);
 
 		// Draw left draw border for side menu
 		Vector2f sqPos2(10, 10);
-		leftSide.setPosition(sqPos2);
-		leftSide.setOutlineColor(Color::White);
-		leftSide.setOutlineThickness(3);
-		leftSide.setSize(Vector2f(250, 580));
-		leftSide.setFillColor(Color::Transparent);
-		win.draw(leftSide);
+		leftBox.setPosition(sqPos2);
+		leftBox.setOutlineColor(Color::White);
+		leftBox.setOutlineThickness(3);
+		leftBox.setSize(Vector2f(250, 580));
+		leftBox.setFillColor(Color::Transparent);
+		win.draw(leftBox);
 
 		// Draw shapes
 		for (int i = 0; i < mgr->vec.size(); i++)

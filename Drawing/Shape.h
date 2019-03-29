@@ -28,35 +28,6 @@ public:
 	virtual Record getFileRecord() = 0;
 };
 
-// circle derived from drawshape
-class Circle : public DrawingShape
-{
-public:
-	CircleShape newCircle;
-	Circle(Vector2f l, Color c, ShapeEnum s) : DrawingShape(l, c, s)
-	{
-		newCircle.setPosition(l);
-		newCircle.setRadius(10);
-		newCircle.setOutlineThickness(2);
-		newCircle.setOutlineColor(c);
-		newCircle.setFillColor(c);
-	}
-	void draw(RenderWindow &window)
-	{
-		window.draw(newCircle);
-	}
-	Record getFileRecord()
-	{
-		Record temp;
-		Color tempColor = newCircle.getFillColor();
-		temp.colorNum = tempColor.toInteger();
-		temp.pos = newCircle.getPosition();
-		temp.shape = CIRCLE;
-
-		return temp;
-	}
-};
-
 // square derieved from drawshape
 class Square : public DrawingShape
 {
@@ -86,3 +57,33 @@ public:
 		return temp;
 	}
 };
+
+// circle derived from drawshape
+class Circle : public DrawingShape
+{
+public:
+	CircleShape newCircle;
+	Circle(Vector2f l, Color c, ShapeEnum s) : DrawingShape(l, c, s)
+	{
+		newCircle.setPosition(l);
+		newCircle.setRadius(10);
+		newCircle.setOutlineThickness(2);
+		newCircle.setOutlineColor(c);
+		newCircle.setFillColor(c);
+	}
+	void draw(RenderWindow &window)
+	{
+		window.draw(newCircle);
+	}
+	Record getFileRecord()
+	{
+		Record temp;
+		Color tempColor = newCircle.getFillColor();
+		temp.colorNum = tempColor.toInteger();
+		temp.pos = newCircle.getPosition();
+		temp.shape = CIRCLE;
+
+		return temp;
+	}
+};
+
